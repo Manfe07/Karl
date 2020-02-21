@@ -45,13 +45,14 @@ print("this is a motor driver test code")
 Motor = MotorDriver()
 
 def motor_drive(data):
-    Motor.MotorRun(0, 'forward', 10)
-    Motor.MotorRun(1, 'forward', 10)
+    Motor.MotorRun(0, 'forward', 100)
+    Motor.MotorRun(1, 'forward', 100)
 
 
 def stop_Motor():
     Motor.MotorStop(0)
     Motor.MotorStop(1)
+    print("Motor Stopped cause Shutdown")
 
 #def drive
 
