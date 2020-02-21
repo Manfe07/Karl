@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import String
+from geometry_msgs.msg import Twist
 from PCA9685 import PCA9685
 
 pwm = PCA9685(0x40, debug=False)
@@ -15,12 +16,18 @@ class MotorDriver():
         self.BIN1 = 3
         self.BIN2 = 4
 
-    def MotorRun(self, motor, index, speed):
+    def MotorRun(self, motor, speed):
+        if speed < 0:
+            speed = abs(speed)
+            direction = False
+        else:
+            direction = True
+
         if speed > 100:
             return
         if(motor == 0):
             pwm.setDutycycle(self.PWMA, speed)
-            if(index == Dir[0]):
+            if(direction):
                 pwm.setLevel(self.AIN1, 0)
                 pwm.setLevel(self.AIN2, 1)
             else:
@@ -28,7 +35,7 @@ class MotorDriver():
                 pwm.setLevel(self.AIN2, 0)
         else:
             pwm.setDutycycle(self.PWMB, speed)
-            if(index == Dir[0]):
+            if(direction):
                 pwm.setLevel(self.BIN1, 0)
                 pwm.setLevel(self.BIN2, 1)
             else:
@@ -41,12 +48,18 @@ class MotorDriver():
         else:
             pwm.setDutycycle(self.PWMB, 0)
 
-print("this is a motor driver test code")
+
 Motor = MotorDriver()
 
-def motor_drive(data):
-    Motor.MotorRun(0, 'forward', 100)
-    Motor.MotorRun(1, 'forward', 100)
+def motor_drive(message):
+    speed = message.linear.x * 100
+    steering = message.angular.z * 100
+    
+    speed_R = speed + (steering / 2)
+    speed_L = speed - (steering / 2)
+
+    Motor.MotorRun(0, speed_R)
+    Motor.MotorRun(1, speed_L)
 
 
 def stop_Motor():
@@ -63,9 +76,9 @@ def listener():
     # anonymous=True flag means that rospy will choose a unique
     # name for our 'listener' node so that multiple listeners can
     # run simultaneously.
-    rospy.init_node('listener', anonymous=True)
+    rospy.init_node('karl_llc')
 
-    rospy.Subscriber("cmd_vel", String, motor_drive)
+    rospy.Subscriber("cmd_vel", Twist, motor_drive)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
