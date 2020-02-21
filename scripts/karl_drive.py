@@ -45,9 +45,14 @@ print("this is a motor driver test code")
 Motor = MotorDriver()
 
 def motor_drive(data):
+    Motor.MotorRun(0, 'forward', 10)
+    Motor.MotorRun(1, 'forward', 10)
+
+
+def stop_Motor():
     Motor.MotorStop(0)
     Motor.MotorStop(1)
-    
+
 #def drive
 
 def listener():
@@ -66,3 +71,5 @@ def listener():
 
 if __name__ == '__main__':
     listener()
+
+rospy.on_shutdown(stop_Motor)
