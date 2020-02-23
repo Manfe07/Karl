@@ -11,6 +11,6 @@
 
      <node pkg="rviz" name="rviz" type="rviz" args="-d $(find ydlidar)/launch/lidar.rviz" />
 
-     <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch" />
+     <!-- <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch" /> -->
 
 </launch>
