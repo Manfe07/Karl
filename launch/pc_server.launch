@@ -9,7 +9,7 @@
 
      <include file="$(find hector_mapping)/launch/mapping_default.launch" />
 
-     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find ydlidar)/launch/lidar.rviz" />
+     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find karl)/launch/karl.rviz" />
 
      <!-- <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch" /> -->
 
