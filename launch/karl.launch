@@ -1,6 +1,6 @@
 <launch>
 
-     <node name="ydlidar_node" pkg="ydlidar" type="ydlidar_node" output="screen" respawn="false" >
+     <node name="ydlidar_node" pkg="ydlidar" type="ydlidar_node" output="screen" respawn="true" >
 
       <param name="port" type="string" value="/dev/ydlidar"/>
 
@@ -35,10 +35,12 @@
      <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0.0 0.0 0.0 0.0 0.0 0.0 /map /nav 40"/>
 
      <node pkg="tf" type="static_transform_publisher" name="odom_to_base_link" args="0.0 0.0 0.0 0.0 0.0 0.0 /nav /base_footprint 40"/>
+     
+     <node pkg="tf" type="static_transform_publisher" name="scanmatcher_frame_to_base_link" args="0.0 0.0 0.0 0.0 0.0 0.0 /scanmatcher_frame /base_link 40"/>
 
      <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.1 0.0 0.1 0.0 0.0 0.0 /base_footprint /laser_frame 40"/>
 
-     <node pkg="karl" name="karl_llc" type="karl_llc.py" output="screen">
+     <node pkg="karl" name="karl_llc" type="karl_llc.py" output="screen" respawn="true"> 
 
      </node>
 
