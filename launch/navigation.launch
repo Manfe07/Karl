@@ -1,8 +1,17 @@
 <launch>
-    <!-- <include file="$(find hector_slam)/launch/mapping_default.launch" /> -->
+     <!-- <include file="$(find hector_slam)/launch/mapping_default.launch" /> -->
+     
+     <!-- Navigation-->
+     <include file="$(find mrp2_navigation)/launch/include/gmapping.launch"/>
+
+     <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.rviz" /> -->
+
+
+     <!-- Mapping-->
 
      <include file="$(find hector_mapping)/launch/mapping_default.launch" />
 
+     <!--GUI-->
      <param name="robot_description" textfile="$(find karl)/urdf/karl.urdf" />
 
      <node pkg="rviz" name="rviz" type="rviz" args="-d $(find karl)/launch/karl.rviz" />
