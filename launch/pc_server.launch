@@ -1,7 +1,7 @@
 <launch>
     <!-- <include file="$(find hector_slam)/launch/mapping_default.launch" /> -->
 
-     <include file="$(find hector_mapping)/launch/mapping_default.launch" />
+    <!-- <include file="$(find hector_mapping)/launch/mapping_default.launch" /> -->
 
      <param name="robot_description" textfile="$(find karl)/urdf/karl.urdf" />
 
