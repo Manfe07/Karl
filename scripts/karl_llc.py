@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 import rospy
+import time
+
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 from PCA9685 import PCA9685
 
 pwm = PCA9685(0x40, debug=False)
 pwm.setPWMFreq(50)
+
+last_call = time.time()
 
 class MotorDriver():
     def __init__(self):
@@ -41,6 +45,7 @@ class MotorDriver():
             else:
                 pwm.setLevel(self.BIN1, 1)
                 pwm.setLevel(self.BIN2, 0)
+        last_call = time.time()
 
     def MotorStop(self, motor):
         if (motor == 0):
@@ -52,8 +57,8 @@ class MotorDriver():
 Motor = MotorDriver()
 
 def motor_drive(message):
-    speed = message.linear.x * 100
-    steering = message.angular.z * 100
+    speed = message.linear.x * 400
+    steering = message.angular.z * 200
     
     speed_R = speed + (steering / 2)
     speed_L = speed - (steering / 2)
@@ -80,6 +85,9 @@ def listener():
 
     rospy.Subscriber("cmd_vel", Twist, motor_drive)
 
+
+    if((last_call + 1 ) <= time.time()):
+        stop_Motor()
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
 
