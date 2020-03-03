@@ -44,5 +44,7 @@
 
      </node>
 
+     <include file="$(find hector_mapping)/launch/mapping_default.launch" />
+
 </launch>
 
