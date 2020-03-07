@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 18)
+    (drawings 17)
     (tracks 197)
     (zones 0)
     (modules 30)
@@ -1462,9 +1462,6 @@
   (gr_line (start 99.06 76.2) (end 99.06 20.32) (layer Edge.Cuts) (width 0.05))
   (gr_text "5V\nLIDAR" (at 46.99 33.02) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify left))
-  )
-  (gr_text "-KARL-\n " (at 76.2 44.45 180) (layer F.Cu) (tstamp 5E640025)
-    (effects (font (size 5 5) (thickness 0.6)))
   )
   (gr_text "c Manuel Fehren" (at 73.66 21.59 180) (layer F.SilkS) (tstamp 5E64001C)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
