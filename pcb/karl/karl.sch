@@ -65,48 +65,48 @@ Power Supply
 $Comp
 L power:GNDA #PWR0103
 U 1 1 5E66817F
-P 1900 7450
-F 0 "#PWR0103" H 1900 7200 50  0001 C CNN
-F 1 "GNDA" H 1905 7277 50  0000 C CNN
-F 2 "" H 1900 7450 50  0001 C CNN
-F 3 "" H 1900 7450 50  0001 C CNN
-	1    1900 7450
+P 2150 7450
+F 0 "#PWR0103" H 2150 7200 50  0001 C CNN
+F 1 "GNDA" H 2155 7277 50  0000 C CNN
+F 2 "" H 2150 7450 50  0001 C CNN
+F 3 "" H 2150 7450 50  0001 C CNN
+	1    2150 7450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1900 7450 1900 7400
+	2150 7450 2150 7400
 Wire Wire Line
-	1900 7400 1950 7400
+	2150 7400 2200 7400
 Wire Wire Line
-	1950 7400 1950 7350
+	2200 7400 2200 7350
 $Comp
-L Connector:Screw_Terminal_01x02 J3
+L Connector:Conn_01x02_Male J3
 U 1 1 5E668DAC
-P 1950 7150
-F 0 "J3" V 1914 6962 50  0000 R CNN
-F 1 "Battery" V 1823 6962 50  0000 R CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 1950 7150 50  0001 C CNN
-F 3 "~" H 1950 7150 50  0001 C CNN
-	1    1950 7150
-	0    -1   -1   0   
+P 2300 7150
+F 0 "J3" V 2264 6962 50  0000 R CNN
+F 1 "Battery" V 2173 6962 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2300 7150 50  0001 C CNN
+F 3 "~" H 2300 7150 50  0001 C CNN
+	1    2300 7150
+	0    1    1    0   
 $EndComp
 $Comp
 L power:+BATT #PWR0104
 U 1 1 5E6685DE
-P 2150 7450
-F 0 "#PWR0104" H 2150 7300 50  0001 C CNN
-F 1 "+BATT" H 2165 7623 50  0000 C CNN
-F 2 "" H 2150 7450 50  0001 C CNN
-F 3 "" H 2150 7450 50  0001 C CNN
-	1    2150 7450
+P 2400 7450
+F 0 "#PWR0104" H 2400 7300 50  0001 C CNN
+F 1 "+BATT" H 2415 7623 50  0000 C CNN
+F 2 "" H 2400 7450 50  0001 C CNN
+F 3 "" H 2400 7450 50  0001 C CNN
+	1    2400 7450
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	2050 7350 2050 7400
+	2300 7350 2300 7400
 Wire Wire Line
-	2050 7400 2150 7400
+	2300 7400 2400 7400
 Wire Wire Line
-	2150 7400 2150 7450
+	2400 7400 2400 7450
 Text Notes 1700 6950 0    50   ~ 0
 Battery Connection
 $Comp
@@ -120,8 +120,6 @@ F 3 "~" H 1600 5650 50  0001 C CNN
 	1    1600 5650
 	1    0    0    -1  
 $EndComp
-Wire Notes Line
-	500  4200 500  7750
 Wire Wire Line
 	1900 4750 1950 4750
 Wire Wire Line
@@ -325,42 +323,6 @@ Wire Notes Line
 	2650 6850 2650 7750
 Text Notes 3700 6950 0    50   ~ 0
 LIDAR USB-Power
-$Comp
-L power:GND #PWR0118
-U 1 1 5E692DF0
-P 2850 7450
-F 0 "#PWR0118" H 2850 7200 50  0001 C CNN
-F 1 "GND" H 2855 7277 50  0000 C CNN
-F 2 "" H 2850 7450 50  0001 C CNN
-F 3 "" H 2850 7450 50  0001 C CNN
-	1    2850 7450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR0119
-U 1 1 5E692DF6
-P 3050 7450
-F 0 "#PWR0119" H 3050 7300 50  0001 C CNN
-F 1 "+5V" H 3065 7623 50  0000 C CNN
-F 2 "" H 3050 7450 50  0001 C CNN
-F 3 "" H 3050 7450 50  0001 C CNN
-	1    3050 7450
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3050 7450 3050 7400
-Wire Wire Line
-	3050 7400 3000 7400
-Wire Wire Line
-	3000 7400 3000 7350
-Wire Wire Line
-	2900 7350 2900 7400
-Wire Wire Line
-	2900 7400 2850 7400
-Wire Wire Line
-	2850 7400 2850 7450
-Text Notes 2700 6950 0    50   ~ 0
-Motor Power
 Wire Notes Line
 	500  6850 4650 6850
 Wire Notes Line
@@ -596,10 +558,6 @@ Wire Wire Line
 	2050 5550 1900 5550
 Wire Wire Line
 	1900 5450 2050 5450
-Text GLabel 3000 4250 1    50   BiDi ~ 0
-GPIO_23
-Text GLabel 3000 5500 1    50   BiDi ~ 0
-GPIO_24
 $Comp
 L Transistor_BJT:MMBT3904 Q2
 U 1 1 5E709F0F
@@ -998,22 +956,287 @@ Wire Notes Line
 Text Notes 2850 3750 0    50   ~ 0
 Left Turn/Status Light
 Wire Notes Line
-	6900 3650 6900 7750
-Wire Notes Line
 	2800 3650 2800 6850
 Wire Wire Line
 	3000 4300 3000 4250
 Wire Wire Line
 	3000 5500 3000 5550
 $Comp
-L Connector:Screw_Terminal_01x02 J4
-U 1 1 5E6449C3
-P 2900 7150
-F 0 "J4" V 2864 6962 50  0000 R CNN
-F 1 "Motor Power" V 2773 6962 50  0000 R CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 2900 7150 50  0001 C CNN
-F 3 "~" H 2900 7150 50  0001 C CNN
-	1    2900 7150
-	0    -1   -1   0   
+L power:+5V #PWR?
+U 1 1 5E69A399
+P 7650 4850
+F 0 "#PWR?" H 7650 4700 50  0001 C CNN
+F 1 "+5V" H 7665 5023 50  0000 C CNN
+F 2 "" H 7650 4850 50  0001 C CNN
+F 3 "" H 7650 4850 50  0001 C CNN
+	1    7650 4850
+	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	7650 4850 8300 4850
+Wire Wire Line
+	8300 4850 8300 4900
+Wire Wire Line
+	7650 4850 7650 5100
+Wire Wire Line
+	7650 5100 7700 5100
+Connection ~ 7650 4850
+$Comp
+L power:GND #PWR?
+U 1 1 5E6AA197
+P 7550 6200
+F 0 "#PWR?" H 7550 5950 50  0001 C CNN
+F 1 "GND" H 7555 6027 50  0000 C CNN
+F 2 "" H 7550 6200 50  0001 C CNN
+F 3 "" H 7550 6200 50  0001 C CNN
+	1    7550 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J6
+U 1 1 5E6C316E
+P 9300 5250
+F 0 "J6" V 9264 5062 50  0000 R CNN
+F 1 "Power" V 9173 5062 50  0000 R CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 9300 5250 50  0001 C CNN
+F 3 "~" H 9300 5250 50  0001 C CNN
+	1    9300 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J7
+U 1 1 5E6C71EF
+P 9300 5800
+F 0 "J7" V 9264 5612 50  0000 R CNN
+F 1 "Power" V 9173 5612 50  0000 R CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 9300 5800 50  0001 C CNN
+F 3 "~" H 9300 5800 50  0001 C CNN
+	1    9300 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 5300 9000 5300
+Wire Wire Line
+	9000 5300 9000 5250
+Wire Wire Line
+	9000 5250 9100 5250
+Wire Wire Line
+	9100 5350 9000 5350
+Wire Wire Line
+	9000 5350 9000 5400
+Wire Wire Line
+	9000 5400 8900 5400
+Wire Wire Line
+	8900 5800 9000 5800
+Wire Wire Line
+	9000 5800 9000 5900
+Wire Wire Line
+	9000 5900 9100 5900
+Wire Wire Line
+	9100 5800 9050 5800
+Wire Wire Line
+	9050 5800 9050 5700
+Wire Wire Line
+	9050 5700 8900 5700
+Wire Wire Line
+	8300 4850 9000 4850
+Wire Wire Line
+	9000 4850 9000 5100
+Wire Wire Line
+	9000 5100 8900 5100
+Connection ~ 8300 4850
+Wire Wire Line
+	7600 5100 7650 5100
+Connection ~ 7650 5100
+Wire Wire Line
+	7550 6150 8300 6150
+Wire Wire Line
+	8300 6150 8300 6100
+Wire Wire Line
+	7550 6200 7550 6150
+Wire Wire Line
+	8300 6150 8400 6150
+Wire Wire Line
+	8400 6150 8400 6100
+Connection ~ 8300 6150
+Wire Wire Line
+	7700 5300 7600 5300
+Wire Wire Line
+	7600 5300 7600 5100
+Wire Wire Line
+	8900 5500 8950 5500
+Wire Wire Line
+	8950 5500 8950 5900
+Wire Wire Line
+	8950 6150 8400 6150
+Connection ~ 8400 6150
+Wire Wire Line
+	8900 5900 8950 5900
+Connection ~ 8950 5900
+Wire Wire Line
+	8950 5900 8950 6150
+$Comp
+L Driver_LED:PCA9685PW U?
+U 1 1 5E74CE85
+P 1850 2750
+F 0 "U?" H 1850 3931 50  0000 C CNN
+F 1 "PCA9685PW" H 1850 3840 50  0000 C CNN
+F 2 "Package_SO:TSSOP-28_4.4x9.7mm_P0.65mm" H 1875 1775 50  0001 L CNN
+F 3 "http://www.nxp.com/documents/data_sheet/PCA9685.pdf" H 1450 3450 50  0001 C CNN
+F 4 "C110795" H 1850 2750 50  0001 C CNN "LCSC"
+	1    1850 2750
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	3500 3650 3500 1250
+Wire Notes Line
+	3500 1250 500  1250
+Wire Notes Line
+	500  1250 500  7750
+Text GLabel 1000 2050 0    50   BiDi ~ 0
+SCL
+Wire Wire Line
+	1000 2050 1150 2050
+Text GLabel 1000 2150 0    50   BiDi ~ 0
+SDA
+Text GLabel 2700 2150 2    50   BiDi ~ 0
+PWM_01
+Text GLabel 2700 2250 2    50   BiDi ~ 0
+PWM_02
+Text GLabel 2700 2350 2    50   BiDi ~ 0
+PWM_03
+Text GLabel 2700 2050 2    50   BiDi ~ 0
+PWM_00
+Text GLabel 2700 2450 2    50   BiDi ~ 0
+PWM_04
+Text GLabel 2700 2550 2    50   BiDi ~ 0
+PWM_05
+Text GLabel 2700 2650 2    50   BiDi ~ 0
+PWM_06
+Text GLabel 2700 2750 2    50   BiDi ~ 0
+PWM_07
+Text GLabel 2700 2850 2    50   BiDi ~ 0
+PWM_08
+Text GLabel 2700 2950 2    50   BiDi ~ 0
+PWM_09
+Text GLabel 2700 3050 2    50   BiDi ~ 0
+PWM_10
+Text GLabel 2700 3150 2    50   BiDi ~ 0
+PWM_11
+Text GLabel 2700 3250 2    50   BiDi ~ 0
+PWM_12
+Text GLabel 2700 3350 2    50   BiDi ~ 0
+PWM_13
+Text GLabel 2700 3450 2    50   BiDi ~ 0
+PWM_14
+Text GLabel 2700 3550 2    50   BiDi ~ 0
+PWM_15
+Wire Wire Line
+	2550 2050 2700 2050
+Wire Wire Line
+	2700 2150 2550 2150
+Wire Wire Line
+	2550 2250 2700 2250
+Wire Wire Line
+	2700 2350 2550 2350
+Wire Wire Line
+	2550 2450 2700 2450
+Wire Wire Line
+	2700 2550 2550 2550
+Wire Wire Line
+	2550 2650 2700 2650
+Wire Wire Line
+	2700 2750 2550 2750
+Wire Wire Line
+	2550 2850 2700 2850
+Wire Wire Line
+	2700 2950 2550 2950
+Wire Wire Line
+	2550 3050 2700 3050
+Wire Wire Line
+	2700 3150 2550 3150
+Wire Wire Line
+	2550 3250 2700 3250
+Wire Wire Line
+	2700 3350 2550 3350
+Wire Wire Line
+	2550 3450 2700 3450
+Wire Wire Line
+	2700 3550 2550 3550
+Wire Wire Line
+	1000 2150 1150 2150
+$Comp
+L power:+5V #PWR?
+U 1 1 5E870262
+P 1450 1700
+F 0 "#PWR?" H 1450 1550 50  0001 C CNN
+F 1 "+5V" H 1465 1873 50  0000 C CNN
+F 2 "" H 1450 1700 50  0001 C CNN
+F 3 "" H 1450 1700 50  0001 C CNN
+	1    1450 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 1700 1850 1700
+Wire Wire Line
+	1850 1700 1850 1750
+$Comp
+L power:GND #PWR?
+U 1 1 5E878E8B
+P 1850 3950
+F 0 "#PWR?" H 1850 3700 50  0001 C CNN
+F 1 "GND" H 1855 3777 50  0000 C CNN
+F 2 "" H 1850 3950 50  0001 C CNN
+F 3 "" H 1850 3950 50  0001 C CNN
+	1    1850 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 3950 1850 3850
+Text Notes 1000 1350 2    50   ~ 0
+PWM Module
+$Comp
+L Driver_Motor:DRV8848 U?
+U 1 1 5E65FAE4
+P 8300 5500
+F 0 "U?" H 8300 6281 50  0000 C CNN
+F 1 "DRV8848" H 8300 6190 50  0000 C CNN
+F 2 "Package_SO:TSSOP-16-1EP_4.4x5mm_P0.65mm" H 8300 4800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/drv8848.pdf" H 7150 6850 50  0001 C CNN
+F 4 "C131079" H 8300 5500 50  0001 C CNN "LCSC"
+	1    8300 5500
+	1    0    0    -1  
+$EndComp
+Text GLabel 7550 5600 0    50   BiDi ~ 0
+PWM_01
+Text GLabel 7550 5800 0    50   BiDi ~ 0
+PWM_02
+Text GLabel 7550 5900 0    50   BiDi ~ 0
+PWM_03
+Text GLabel 7550 5500 0    50   BiDi ~ 0
+PWM_00
+Wire Wire Line
+	7550 5800 7700 5800
+Wire Wire Line
+	7700 5900 7550 5900
+Wire Wire Line
+	7550 5600 7700 5600
+Wire Wire Line
+	7700 5500 7550 5500
+Text GLabel 3000 4250 1    50   BiDi ~ 0
+PWM_04
+Text GLabel 3000 5500 1    50   BiDi ~ 0
+PWM_05
+Text Notes 3100 2550 0    28   ~ 0
+AIN1\n\nAIN2\n\nBIN1\n\nBIN2\n\nL LIGHT\n\nR LIGHT
+Wire Notes Line
+	6900 3650 6900 7750
+Wire Notes Line
+	6900 6450 9450 6450
+Wire Notes Line
+	9450 6450 9450 4200
+Wire Notes Line
+	9450 4200 6900 4200
+Text Notes 7400 4300 2    50   ~ 0
+Motor Driver
 $EndSCHEMATC
