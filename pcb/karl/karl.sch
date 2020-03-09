@@ -1072,12 +1072,6 @@ F 4 "C110795" H 1850 2750 50  0001 C CNN "LCSC"
 	1    1850 2750
 	1    0    0    -1  
 $EndComp
-Wire Notes Line
-	3500 3650 3500 1250
-Wire Notes Line
-	3500 1250 500  1250
-Wire Notes Line
-	500  1250 500  7750
 Text GLabel 1000 2050 0    50   BiDi ~ 0
 SCL
 Wire Wire Line
@@ -1178,7 +1172,7 @@ F 3 "" H 1850 3950 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1850 3950 1850 3850
-Text Notes 1000 1350 2    50   ~ 0
+Text Notes 1000 1100 2    50   ~ 0
 PWM Module
 $Comp
 L Driver_Motor:DRV8848 U3
@@ -1214,8 +1208,6 @@ Text GLabel 3000 5500 1    50   BiDi ~ 0
 PWM_05
 Text Notes 3100 2550 0    28   ~ 0
 AIN1\n\nAIN2\n\nBIN1\n\nBIN2\n\nL LIGHT\n\nR LIGHT
-Wire Notes Line
-	6900 3650 6900 7750
 Wire Notes Line
 	6900 6450 9450 6450
 Wire Notes Line
@@ -1284,4 +1276,162 @@ Wire Wire Line
 	4050 7250 4200 7250
 Wire Wire Line
 	4200 7150 4050 7150
+$Comp
+L Sensor_Motion:MPU-6050 U4
+U 1 1 5E731C73
+P 4850 2650
+F 0 "U4" H 4850 1861 50  0000 C CNN
+F 1 "MPU-6050" H 4850 1770 50  0000 C CNN
+F 2 "Sensor_Motion:InvenSense_QFN-24_4x4mm_P0.5mm" H 4850 1850 50  0001 C CNN
+F 3 "https://store.invensense.com/datasheets/invensense/MPU-6050_DataSheet_V3%204.pdf" H 4850 2500 50  0001 C CNN
+F 4 "C24112" H 4850 2650 50  0001 C CNN "LCSC"
+	1    4850 2650
+	1    0    0    -1  
+$EndComp
+Text GLabel 4000 2350 0    50   BiDi ~ 0
+SDA
+Text GLabel 4000 2450 0    50   BiDi ~ 0
+SCL
+$Comp
+L power:GND #PWR0134
+U 1 1 5E745F9E
+P 6550 3350
+F 0 "#PWR0134" H 6550 3100 50  0001 C CNN
+F 1 "GND" H 6555 3177 50  0000 C CNN
+F 2 "" H 6550 3350 50  0001 C CNN
+F 3 "" H 6550 3350 50  0001 C CNN
+	1    6550 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:C C2
+U 1 1 5E759335
+P 4950 1550
+F 0 "C2" H 5128 1596 50  0000 L CNN
+F 1 "0.1µF" H 5128 1505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0201_0603Metric" H 4950 1550 50  0001 C CNN
+F 3 "~" H 4950 1550 50  0001 C CNN
+	1    4950 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:C C4
+U 1 1 5E759ED2
+P 6000 3250
+F 0 "C4" V 5685 3250 50  0000 C CNN
+F 1 "0.1µF" V 5776 3250 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0201_0603Metric" H 6000 3250 50  0001 C CNN
+F 3 "~" H 6000 3250 50  0001 C CNN
+	1    6000 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:C C3
+U 1 1 5E793D6D
+P 6000 2700
+F 0 "C3" V 5685 2700 50  0000 C CNN
+F 1 "2.2nF" V 5776 2700 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0201_0603Metric" H 6000 2700 50  0001 C CNN
+F 3 "~" H 6000 2700 50  0001 C CNN
+	1    6000 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:C C1
+U 1 1 5E794685
+P 4400 1850
+F 0 "C1" V 4715 1850 50  0000 C CNN
+F 1 "10nF" V 4624 1850 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0201_0603Metric" H 4400 1850 50  0001 C CNN
+F 3 "~" H 4400 1850 50  0001 C CNN
+	1    4400 1850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4750 1950 4750 1850
+Wire Wire Line
+	4750 1850 4650 1850
+Wire Wire Line
+	4150 2350 4000 2350
+Wire Wire Line
+	4000 2450 4150 2450
+Wire Wire Line
+	5750 2700 5650 2700
+Wire Wire Line
+	5650 2700 5650 2850
+Wire Wire Line
+	5650 2850 5550 2850
+Wire Wire Line
+	6350 2700 6250 2700
+Wire Wire Line
+	6250 3250 6350 3250
+Wire Wire Line
+	6350 3250 6350 2700
+Wire Wire Line
+	5750 3250 5650 3250
+Wire Wire Line
+	5650 3250 5650 2950
+Wire Wire Line
+	5650 2950 5550 2950
+Wire Wire Line
+	4950 1800 4950 1900
+Wire Wire Line
+	4950 1300 4050 1300
+Wire Wire Line
+	4050 1300 4050 1850
+Wire Wire Line
+	4050 1850 4150 1850
+$Comp
+L power:GND #PWR0135
+U 1 1 5E848F67
+P 3950 1850
+F 0 "#PWR0135" H 3950 1600 50  0001 C CNN
+F 1 "GND" H 3955 1677 50  0000 C CNN
+F 2 "" H 3950 1850 50  0001 C CNN
+F 3 "" H 3950 1850 50  0001 C CNN
+	1    3950 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 1850 4050 1850
+Connection ~ 4050 1850
+$Comp
+L power:+5V #PWR0136
+U 1 1 5E853D3C
+P 5200 1900
+F 0 "#PWR0136" H 5200 1750 50  0001 C CNN
+F 1 "+5V" V 5215 2028 50  0000 L CNN
+F 2 "" H 5200 1900 50  0001 C CNN
+F 3 "" H 5200 1900 50  0001 C CNN
+	1    5200 1900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5200 1900 4950 1900
+Connection ~ 4950 1900
+Wire Wire Line
+	4950 1900 4950 1950
+Wire Wire Line
+	6350 3250 6550 3250
+Wire Wire Line
+	6550 3250 6550 3350
+Connection ~ 6350 3250
+Wire Wire Line
+	6350 3250 6350 3550
+Wire Wire Line
+	6350 3550 5250 3550
+Wire Wire Line
+	5250 3550 5250 3350
+Wire Wire Line
+	5250 3350 4850 3350
+Wire Notes Line
+	3500 1000 3500 3650
+Wire Notes Line
+	500  1000 500  7750
+Wire Notes Line
+	6900 1000 6900 7750
+Wire Notes Line
+	500  1000 6900 1000
+Text Notes 3550 1100 0    50   ~ 0
+MPU-6050
 $EndSCHEMATC
