@@ -9,14 +9,14 @@ pub = rospy.Publisher('/karl/speed', Float64, queue_size=10)
 old_x = 0.0
 old_y = 0.0
 
-speed_array = [0, 0, 0, 0, 0]
-
+speed_sum = 0.0
+counter = 0
 speed = 0
 tick = time.time()
 old_tick = time.time()    
 
 def calc_speed(data):
-    global old_x, old_y, old_tick, speed_array
+    global old_x, old_y, old_tick, counter, speed_sum
 
     tick = time.time()
     duration = tick - old_tick
@@ -30,24 +30,25 @@ def calc_speed(data):
     speed_y = math.fabs(new_y - old_y) * freq
     
     speed_vector = complex(speed_x, speed_y)
-
-    for i in range(1,4):
-        speed_array[i-1] = speed_array[i]
-    
+ 
     speed = abs(speed_vector)
-    speed_array[4] = speed
+    if (speed <= 0.02):
+        speed = 0
     
-    speed_sum = 0.0
+    speed_sum += speed
+    counter += 1
 
-    for i in range(4):
-        speed_sum = speed_sum + speed_array[i]
-
-    speed_avg = speed_sum / 5
-
-    pub.publish(Float64(speed_avg))
-    #print(speed_avg)
+    if (counter >= 15):
+        speed_avg = speed_sum / 15
+        if (speed_avg <= 0.01):
+            speed_avg = 0
+        speed_sum = 0
+        counter = 0
+        
+        pub.publish(Float64(speed_avg))
+        #print(speed_avg)
+    
     #print(speed)
-
     old_x = new_x
     old_y = new_y
     

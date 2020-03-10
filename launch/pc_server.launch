@@ -22,6 +22,8 @@
      
      <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
 
+     <node pkg="karl" name="speed_calc" type="speed_calc.py" output="screen"/>
+
     <!--
      <include file="$(find hector_mapping)/launch/mapping_default.launch" />    
 
