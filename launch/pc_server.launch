@@ -2,10 +2,29 @@
 
      <!-- <include file="$(find karl)/launch/gmapping.launch" /> -->
     
-     <include file="$(find hector_mapping)/launch/mapping_default.launch" />    
-
+     
      <param name="robot_description" textfile="$(find karl)/urdf/karl.urdf" />
     
+
+     <node pkg ="tf" type="static_transform_publisher" name="map_to_odom" args="0.0 0.0 0.0 0.0 0.0 0.0 /map /nav 100"/>
+
+     <node pkg ="tf" type="static_transform_publisher" name="odom_to_base_link" args="0.0 0.0 0.0 0.0 0.0 0.0 /nav /base_footprint 100"/>
+
+     <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.1 0.0 0.1 0.0 0.0 0.0 /base_footprint /laser_frame 100"/>
+
+     <node pkg="tf" type="static_transform_publisher" name="scanmatcher_frame_to_base_link" args="0.0 0.0 0.0 0.0 0.0 0.0 /scanmatcher_frame /base_link 100"/>
+
+     <include file="$(find hector_mapping)/launch/mapping_default.launch" />
+
+     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find karl)/launch/karl.rviz" />
+ 
+     <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch" />
+     
+     <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
+
+    <!--
+     <include file="$(find hector_mapping)/launch/mapping_default.launch" />    
+
      <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0.0 0.0 0.0 0.0 0.0 0.0 /map /nav 40"/>
     
      <node pkg="tf" type="static_transform_publisher" name="odom_to_base_link" args="0.0 0.0 0.0 0.0 0.0 0.0 /nav /base_footprint 40"/>
@@ -16,9 +35,8 @@
 
      <node pkg="rviz" name="rviz" type="rviz" args="-d $(find karl)/launch/karl.rviz" />
  
-     <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
-
-
+   
+-->
      <!-- <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch" /> -->
 
 
