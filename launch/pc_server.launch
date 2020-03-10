@@ -6,7 +6,12 @@
      <param name="robot_description" textfile="$(find karl)/urdf/karl.urdf" />
 
      <node pkg="rviz" name="rviz" type="rviz" args="-d $(find karl)/launch/karl.rviz" />
+ 
+     <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
+ 
+     <node pkg="karl" name="speed_calc" type="speed_calc.py" output="screen" />
 
      <!-- <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch" /> -->
+
 
 </launch>
