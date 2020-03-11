@@ -3,13 +3,13 @@
      <include file="$(find karl)/launch/yd_lidar.launch" />    
 
      <!-- Karl specific-->
-     <node pkg="karl" name="karl_llc" type="karl_llc.py" output="screen">
+     <node pkg="karl" name="karl_llc" type="karl_llc.py" output="screen"/>
 
      <!-- Mapping -->
-     <include file="$(find karl)/launch/mapping.launch"></include>
+     <include file="$(find karl)/launch/mapping.launch"/>
 
      <!-- ADAPTIVE MONTE CARLO LOCALISATION -->
-     <include file="$(find karl)/launch/amcl.launch"></include>
+     <include file="$(find karl)/launch/amcl.launch"/>
      
      </node>
 </launch>

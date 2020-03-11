@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <launch>
+
      <!-- GUI -->
-       <!-- ADAPTIVE MONTE CARLO LOCALISATION -->
-     <include file="$(find karl)/launch/gui.launch"></include>
+     <include file="$(find karl)/launch/gui.launch"/>
+
 </launch>
