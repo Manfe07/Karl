@@ -3,10 +3,21 @@
 
      <!-- Mapping -->
      <include file="$(find karl)/launch/mapping.launch"/>
+     
+     <!-- static transformation -->
+     <include file="$(find karl)/launch/static_tf.launch"/>
+
+     <!-- map server -->
+     <!--
+     <arg name="map_file" default="$(find karl)/maps/fehren/fehren.yaml"/>
+     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+     -->
 
      <!-- ADAPTIVE MONTE CARLO LOCALISATION -->
+     <!--
      <include file="$(find karl)/launch/amcl.launch"/>
-
+     -->
+     
      <!-- GUI -->
      <include file="$(find karl)/launch/gui.launch"/>
 
