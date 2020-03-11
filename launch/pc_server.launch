@@ -1,35 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <launch>
-
-     <!-- Static Transform -->
-     <node pkg ="tf" type="static_transform_publisher" name="map_to_odom" args="0.0 0.0 0.0 0.0 0.0 0.0 /map /nav 100"/>
-
-     <node pkg ="tf" type="static_transform_publisher" name="odom_to_base_link" args="0.0 0.0 0.0 0.0 0.0 0.0 /nav /base_footprint 100"/>
-
-     <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.1 0.0 0.1 0.0 0.0 0.0 /base_footprint /laser_frame 100"/>
-
-     <node pkg="tf" type="static_transform_publisher" name="scanmatcher_frame_to_base_link" args="0.0 0.0 0.0 0.0 0.0 0.0 /scanmatcher_frame /base_link 100"/>
-
-     
-     <!-- Mapping -->
-     <include file="$(find hector_mapping)/launch/mapping_default.launch" />
- 
-     <include file="$(find hector_geotiff)/launch/geotiff_mapper.launch" />
-     
-
-     <!-- Karl specific -->
-     <node pkg="karl" name="speed_calc" type="speed_calc.py" output="screen"/>
-
-     <param name="robot_description" textfile="$(find karl)/urdf/karl.urdf" />
-    
-
-     <!-- ADAPTIVE MONTE CARLO LOCALISATION -->
-     <include file="$(find karl)/launch/amcl.launch"></include>
-
      <!-- GUI -->
-     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find karl)/launch/karl.rviz" />
-
-     <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
- 
-
+       <!-- ADAPTIVE MONTE CARLO LOCALISATION -->
+     <include file="$(find karl)/launch/gui.launch"></include>
 </launch>

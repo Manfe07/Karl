@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<launch>
+    <!-- GUI -->
+     <param name="robot_description" textfile="$(find karl)/urdf/karl.urdf" />
+    
+     <node pkg="rviz" name="rviz" type="rviz" args="-d $(find karl)/launch/karl.rviz" />
+
+     <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering" />
+ 
+
+</launch>
