@@ -52,7 +52,7 @@ class MotorDriver():
 Motor = MotorDriver()
 
 def motor_drive(message):
-    speed = message.linear.x * 100
+    speed = message.linear.x * 300
     steering = message.angular.z * 100
     
     speed_R = speed + (steering / 2)
